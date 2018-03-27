@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AsyncNet.Common\AsyncNet.Common.csproj" />
+    <ProjectReference Include="..\AsyncNet.Jobs\AsyncNet.Jobs.csproj" />
+    <ProjectReference Include="..\AsyncNet.TestCases.Selenium\AsyncNet.TestCases.Selenium.csproj" />
+    <ProjectReference Include="..\AsyncNet.TestJobs\AsyncNet.TestJobs.csproj" />
+  </ItemGroup>
+
+</Project>
