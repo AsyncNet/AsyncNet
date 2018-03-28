@@ -100,7 +100,8 @@ namespace AsyncNet.TestJobs
             return new TestCaseContext
             {
                 SessionId = ((TestJobsContext)JobContext).SessionId,
-                TestId = Regex.Replace(Convert.ToBase64String(Guid.NewGuid().ToByteArray()), "[/+=]", "").Substring(11)
+                TestId = Regex.Replace(Convert.ToBase64String(Guid.NewGuid().ToByteArray()), "[/+=]", "").Substring(11),
+                // Pages = new Pages(WebDriverFactory.)
             };
         }
     }
