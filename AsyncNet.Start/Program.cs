@@ -13,7 +13,7 @@ namespace AsyncNet.Start
 
             var providerSettings = new TestJobsProviderSettings
             {
-                SearchInAssemblyName = "AsyncNet.TestCases.Selenium"
+                SearchInAssemblyName = "AsyncNet.Selenium.Tests"
             };
 
             var jobsProvider = new TestJobsProvider(providerSettings);
@@ -33,7 +33,6 @@ namespace AsyncNet.Start
             jobsManager.OnStateChanged += (s, e) => logger.Info("STATE CHANGED - " + ((TestCaseJob)s).State.ToString() + " - " + ((TestCaseJob)s).TestCaseType.Name);
 
             jobsManager.BeginRun();
-
 
             bool ask = true;
 
@@ -55,7 +54,6 @@ namespace AsyncNet.Start
                         break;
                 }
             }
-            
         }
     }
 }

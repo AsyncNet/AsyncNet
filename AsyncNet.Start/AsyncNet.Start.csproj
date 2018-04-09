@@ -8,7 +8,9 @@
   <ItemGroup>
     <ProjectReference Include="..\AsyncNet.Common\AsyncNet.Common.csproj" />
     <ProjectReference Include="..\AsyncNet.Jobs\AsyncNet.Jobs.csproj" />
-    <ProjectReference Include="..\AsyncNet.TestCases.Selenium\AsyncNet.TestCases.Selenium.csproj" />
+    <ProjectReference Include="..\AsyncNet.Selenium.Common\AsyncNet.Selenium.Common.csproj" />
+    <ProjectReference Include="..\AsyncNet.Selenium.Pages\AsyncNet.Selenium.Pages.csproj" />
+    <ProjectReference Include="..\AsyncNet.Selenium.Tests\AsyncNet.Selenium.Tests.csproj" />
     <ProjectReference Include="..\AsyncNet.TestJobs\AsyncNet.TestJobs.csproj" />
   </ItemGroup>
 

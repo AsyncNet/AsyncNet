@@ -6,7 +6,5 @@ namespace AsyncNet.TestJobs
         public string SessionId { get; set; }
 
         public string TestId { get; set; }
-
-        public Pages Pages { get; set; }
     }
 }
