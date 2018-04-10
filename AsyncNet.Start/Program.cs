@@ -1,6 +1,7 @@
 ﻿using AsyncNet.Jobs;
 using AsyncNet.Start.Logging;
 using AsyncNet.TestJobs;
+using MyStandard;
 using System;
 
 namespace AsyncNet.Start
@@ -9,6 +10,9 @@ namespace AsyncNet.Start
     {
         static void Main(string[] args)
         {
+            var myTestClass = new MyTestClass();
+            myTestClass.Run();
+
             var logger = new GeneralLogger();
 
             var providerSettings = new TestJobsProviderSettings
@@ -17,7 +21,6 @@ namespace AsyncNet.Start
             };
 
             var jobsProvider = new TestJobsProvider(providerSettings);
-
             var managerSettings = new JobsManagerSettings();
             var jobsManager = new TestJobsManager(jobsProvider, managerSettings);
 

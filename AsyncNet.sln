@@ -11,11 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncNet.Common", "AsyncNet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncNet.Start", "AsyncNet.Start\AsyncNet.Start.csproj", "{6A99A16D-DA06-4DF5-B19A-3070E9A35082}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncNet.Selenium.Pages", "AsyncNet.Selenium.Pages\AsyncNet.Selenium.Pages.csproj", "{BFC86752-B159-4D5B-89DC-70BA842AC0FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncNet.Selenium.Pages", "AsyncNet.Selenium.Pages\AsyncNet.Selenium.Pages.csproj", "{BFC86752-B159-4D5B-89DC-70BA842AC0FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncNet.Selenium.Common", "AsyncNet.Selenium.Common\AsyncNet.Selenium.Common.csproj", "{C1BBC0CD-8E75-4C84-940B-3A8D07FB7EC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncNet.Selenium.Common", "AsyncNet.Selenium.Common\AsyncNet.Selenium.Common.csproj", "{C1BBC0CD-8E75-4C84-940B-3A8D07FB7EC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncNet.Selenium.Tests", "AsyncNet.Selenium.Tests\AsyncNet.Selenium.Tests.csproj", "{A9A7567D-B339-454B-9DBC-2C297C9472E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncNet.Selenium.Tests", "AsyncNet.Selenium.Tests\AsyncNet.Selenium.Tests.csproj", "{A9A7567D-B339-454B-9DBC-2C297C9472E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStandard", "MyStandard\MyStandard.csproj", "{8DB76D2C-C877-438C-A34E-AB65EBE9CD5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A9A7567D-B339-454B-9DBC-2C297C9472E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9A7567D-B339-454B-9DBC-2C297C9472E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9A7567D-B339-454B-9DBC-2C297C9472E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB76D2C-C877-438C-A34E-AB65EBE9CD5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB76D2C-C877-438C-A34E-AB65EBE9CD5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB76D2C-C877-438C-A34E-AB65EBE9CD5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB76D2C-C877-438C-A34E-AB65EBE9CD5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,13 +1,21 @@
-﻿using AsyncNet.TestJobs;
+﻿using AsyncNet.Selenium.Common.Configuration;
+using AsyncNet.TestJobs;
 
 namespace AsyncNet.Selenium.Common
 {
     public abstract class SeleniumTest : TestCase
     {
+        private readonly SeleniumSettingsFactory settingsFactory;
+
+        public SeleniumTest()
+        {
+            var factory = new SeleniumSettingsFactory();
+        }
+
         protected override void Before(IBeforeActionContext context)
         {
             base.Before(context);
-            Before(new SeleniumBeforeActionContext(context));
+            Before(new SeleniumBeforeActionContext(context, null));
         }
 
         protected override void Execute(IActionContext context)

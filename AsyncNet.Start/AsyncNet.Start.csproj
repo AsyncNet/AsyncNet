@@ -12,6 +12,7 @@
     <ProjectReference Include="..\AsyncNet.Selenium.Pages\AsyncNet.Selenium.Pages.csproj" />
     <ProjectReference Include="..\AsyncNet.Selenium.Tests\AsyncNet.Selenium.Tests.csproj" />
     <ProjectReference Include="..\AsyncNet.TestJobs\AsyncNet.TestJobs.csproj" />
+    <ProjectReference Include="..\MyStandard\MyStandard.csproj" />
   </ItemGroup>
 
 </Project>
