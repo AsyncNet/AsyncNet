@@ -1,5 +1,8 @@
 ﻿using AsyncNet.Selenium.Common;
+using AsyncNet.TestJobs;
+using OpenQA.Selenium;
 using System.Threading;
+using static AsyncNet.TestJobs.WebDriverFactory;
 
 namespace AsyncNet.Selenium.Tests
 {
@@ -9,8 +12,15 @@ namespace AsyncNet.Selenium.Tests
 
         protected override void Execute(SeleniumActionContext context)
         {
-            Thread.Sleep(1000);
-            Name = "First test";
+            var factory = new WebDriverFactory();
+
+
+            using(IWebDriver driver = factory.GetDriver(Browser.Chrome))
+            {
+                driver.Url = "http://google.com";
+                Thread.Sleep(1000);
+                Name = "First test";
+            }
         }
 
         protected override void After(SeleniumAfterActionContext context)
