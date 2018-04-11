@@ -21,6 +21,7 @@ namespace AsyncNet.Jobs
         public event EventHandler<JobArgs> OnActionExecuting;
         public event EventHandler<JobFailedArgs> OnActionFailed;
         public event EventHandler<JobArgs> OnActionExecuted;
+        public event EventHandler<JobArgs> OnActionCancelled;
         public event EventHandler<JobArgs> OnBackActionExecuting;
         public event EventHandler<JobFailedArgs> OnBackActionFailed;
         public event EventHandler<JobArgs> OnBackActionExecuted;
@@ -166,7 +167,7 @@ namespace AsyncNet.Jobs
 
         private JobTaskResult RunAction(IEnumerable<Task<JobTaskResult>> parentTasks)
         {
-            if (parentTasks.Any(x => x.Result.ActionFailed))
+            if (parentTasks.Any(x => x.Result.ActionCanceled))
             {
                 State = JobState.ActionSkipped;
                 OnActionFailed?.Invoke(this, new JobFailedArgs { Exception = new Exception("Skipped because one of parent tasks failed") });
@@ -187,8 +188,16 @@ namespace AsyncNet.Jobs
                 OnActionExecuting?.Invoke(this, new JobArgs());
                 State = JobState.ActionExecuting;
                 Action(new JobActionFeed(result));
-                OnActionExecuted?.Invoke(this, new JobArgs());
-                state = JobState.ActionExecuted;
+
+                if (result.ActionCanceled)
+                {
+                    state = JobState.ActionCanceled;
+                }
+                else
+                {
+                    OnActionExecuted?.Invoke(this, new JobArgs());
+                    state = JobState.ActionExecuted;
+                }
             }
             catch (Exception ex)
             {
@@ -197,7 +206,7 @@ namespace AsyncNet.Jobs
                     Exception = ex
                 };
 
-                result.ActionFailed = true;
+                result.ActionCanceled = true;
                 OnActionFailed?.Invoke(this, args);
                 State = JobState.ActionFailed;
             }

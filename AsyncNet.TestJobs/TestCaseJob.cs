@@ -70,8 +70,9 @@ namespace AsyncNet.TestJobs
             }
             catch
             {
-                // don't run child tasks
-                actionFeed.Cancel();
+                // parent obejct will take care to not run child actions
+                // you can run custom logging here
+                throw;
             }
         }
 

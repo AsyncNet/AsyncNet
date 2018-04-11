@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="2.37.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AsyncNet.Common\AsyncNet.Common.csproj" />
     <ProjectReference Include="..\AsyncNet.Jobs\AsyncNet.Jobs.csproj" />
     <ProjectReference Include="..\AsyncNet.Selenium.Common\AsyncNet.Selenium.Common.csproj" />

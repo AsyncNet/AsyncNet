@@ -9,13 +9,16 @@ namespace AsyncNet.Selenium.Common
 
         public SeleniumTest()
         {
-            var factory = new SeleniumSettingsFactory();
+            settingsFactory = new SeleniumSettingsFactory();            
         }
 
         protected override void Before(IBeforeActionContext context)
         {
             base.Before(context);
-            Before(new SeleniumBeforeActionContext(context, null));
+
+            var settingsProvider = settingsFactory.GetSettingsProvider(SeleniumSettingsFactory.ProviderSource.Hardcoded);
+
+            Before(new SeleniumBeforeActionContext(context, settingsProvider.GetSettings()));
         }
 
         protected override void Execute(IActionContext context)
