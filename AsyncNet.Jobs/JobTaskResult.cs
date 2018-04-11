@@ -2,13 +2,13 @@
 {
     public class JobTaskResult
     {
-        public bool ActionFailed { get; set; } = false;
+        public bool ActionCanceled { get; set; } = false;
 
         public static JobTaskResult Failed()
         {
             return new JobTaskResult
             {
-                ActionFailed = true
+                ActionCanceled = true
             };
         }
     }

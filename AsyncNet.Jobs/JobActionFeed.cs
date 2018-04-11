@@ -11,7 +11,7 @@
 
         public void Cancel()
         {
-            jobTaskResult.ActionFailed = true;
+            jobTaskResult.ActionCanceled = true;
         }
     }
 }

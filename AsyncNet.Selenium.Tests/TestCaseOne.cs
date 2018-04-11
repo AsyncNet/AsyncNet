@@ -18,7 +18,7 @@ namespace AsyncNet.Selenium.Tests
             using(IWebDriver driver = factory.GetDriver(Browser.Chrome))
             {
                 driver.Url = "http://google.com";
-                Thread.Sleep(1000);
+                Thread.Sleep(5000);
                 Name = "First test";
             }
         }

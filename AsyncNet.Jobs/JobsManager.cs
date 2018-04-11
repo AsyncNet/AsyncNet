@@ -28,6 +28,7 @@ namespace AsyncNet.Jobs
         public event EventHandler OnFinished;
         public event EventHandler OnFailed;
         public event EventHandler<JobArgs> OnActionExecuting;
+        public event EventHandler<JobArgs> OnActionCanceled;
         public event EventHandler<JobFailedArgs> OnActionFailed;
         public event EventHandler<JobArgs> OnActionExecuted;
         public event EventHandler<JobArgs> OnBackActionExecuting;
@@ -170,6 +171,7 @@ namespace AsyncNet.Jobs
         {
             jobs.Each(x => x.OnActionExecuting += OnActionExecuting);
             jobs.Each(x => x.OnActionExecuted += OnActionExecuted);
+            jobs.Each(x => x.OnActionCancelled += OnActionCanceled);
             jobs.Each(x => x.OnActionFailed += OnActionFailed);
             jobs.Each(x => x.OnBackActionExecuting += OnBackActionExecuting);
             jobs.Each(x => x.OnBackActionExecuted += OnBackActionExecuted);

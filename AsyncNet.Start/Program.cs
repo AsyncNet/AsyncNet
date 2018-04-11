@@ -29,6 +29,7 @@ namespace AsyncNet.Start
             jobsManager.OnFinished += (s, e) => logger.Info("PROCESS FINISHED");
             jobsManager.OnActionExecuting += (s, e) => logger.Info("START - " + ((TestCaseJob)s).TestCaseType.Name);
             jobsManager.OnActionExecuted += (s, e) => logger.Info("STOP  - " + ((TestCaseJob)s).TestCaseType.Name);
+            jobsManager.OnActionCanceled += (s, e) => logger.Info("CANCELLED - " + ((TestCaseJob)s).TestCaseType.Name);
             jobsManager.OnActionFailed += (s, e) => logger.Info("FAILED - " + ((TestCaseJob)s).TestCaseType.Name + " Exception: " + e.Exception.ToString());
             jobsManager.OnBackActionExecuting += (s, e) => logger.Info("BACK START - " + ((TestCaseJob)s).TestCaseType.Name);
             jobsManager.OnBackActionExecuted += (s, e) => logger.Info("BACK STOP  - " + ((TestCaseJob)s).TestCaseType.Name);

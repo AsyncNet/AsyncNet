@@ -17,7 +17,7 @@ namespace AsyncNet.TestJobs
             switch(browser)
             {
                 case Browser.Chrome:
-                    return new ChromeDriver();
+                    return new ChromeDriver("C:\\CHANDA\\TEST_APPS\\AsyncNet_Repo\\AsyncNet.Start\\bin\\Debug\\netcoreapp2.0");
                 default:
                     throw new ApplicationException("Unable to find web driver");
             }
